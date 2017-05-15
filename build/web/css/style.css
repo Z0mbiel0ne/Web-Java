@@ -1,0 +1,72 @@
+#logo
+{
+	width: 100;
+	height: 100;
+	float: left;
+}
+
+.zentriert 
+{
+	margin-left: auto;
+	margin-right: auto;
+	border: thin solid;
+}
+
+#bild
+{
+	width: 100px;
+	height: 100px;
+}
+
+.knopf:hover
+{
+	background-color: #008CBA;
+}
+
+.knopf
+{
+	background-color: #4CAF50;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+} 
+
+.groß
+{
+	padding: 15px 32px;
+	margin: 20px 2px;
+	font-size: 20px;
+}
+
+.klein
+{
+	padding: 7px 16px;
+	font-size: 13px;
+	margin: 4px 0px 0px 0px;
+}
+
+#info
+{
+	border: none;
+	display:inline-block;
+}
+
+#navigation
+{
+	margin-left: 7em;
+}
+
+#fragen
+{
+	display:inline-block;
+}
+
+#fragen input
+{
+	width: 100%;
+    clear: both;
+}
