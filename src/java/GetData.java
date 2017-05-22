@@ -6,6 +6,7 @@
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -18,7 +19,6 @@ import javax.servlet.http.HttpServletResponse;
  */
 @WebServlet("/GetData")
 public class GetData extends HttpServlet {
-Kundenliste kl = new Kundenliste();
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -32,32 +32,8 @@ Kundenliste kl = new Kundenliste();
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Rückgabe</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            String vorname = request.getParameter("vorname");
-            String nachname = request.getParameter("nachname");
-            String datum = request.getParameter("datum");
-            String grund = request.getParameter("grund");
-            out.print(request.getParameter("text"));
-            out.print(request.getParameter("vorname"));
-            out.print(request.getParameter("nachname"));
-            out.print(request.getParameter("datum"));
-            out.print(request.getParameter("grund"));
-            String text = request.getParameter("text");
-            Kontaktdaten kd = new Kontaktdaten(vorname, nachname, datum, grund, text);
-            kl.add(kd);
-            
-            for (Kontaktdaten ks : kl) {
-                System.out.println(ks.getVorname() + " " + ks.getNachname() + " " + ks.getDatum() + " " + ks.getGrund() + " " + ks.getText());
-            }
-            System.out.println(kd.getVorname() + " " + kd.getNachname() + " " + kd.getDatum() + " " + kd.getGrund() + " " + kd.getText());
-            out.println("</body>");
-            out.println("</html>");
+            RequestDispatcher dispatcher = request.getRequestDispatcher("/Web Pages /Test.jsp");
+            dispatcher.forward(request, response);
         }
     }
 
