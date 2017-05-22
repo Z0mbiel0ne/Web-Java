@@ -45,7 +45,7 @@
                                         </div>
 				</div>
 				<div style="width: 70%; float: left" align="center">
-						<form method="GET" style="display: block;">
+						<form method="GET" action="GetData" style="display: block;">
 								<fieldset id="fragen">
 									<label>Vorname:</label>
 									<input type="text" name="vorname" autofocus="autofocus" required="required">
@@ -74,8 +74,8 @@
               
                                              
 						</form>
-                                    <jsp:useBean id = "Kundendaten" class = "testBeans.Kundendaten" />
-                                    <jsp:setProperty name="Kundendaten" property="*" />
+                                    <jsp:useBean id = "Kundendaten" class = "testBeans.Kundendaten" scope="session"/>
+                                    <jsp:setProperty name="Kundendaten" property="vorname" />
 				</div>
 				<div style="width: 15%; float: left;">
 					<div align="center">
