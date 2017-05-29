@@ -21,6 +21,7 @@ import testBeans.Kundendaten;
  */
 @WebServlet("/GetData")
 public class GetData extends HttpServlet {
+
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -31,9 +32,9 @@ public class GetData extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-                response.setContentType("text/html");
-			RequestDispatcher rd = request.getRequestDispatcher("Details.jsp");
-				rd.include(request, response);
+        response.setContentType("text/html");
+        RequestDispatcher rd = request.getRequestDispatcher("Details.jsp");
+        rd.include(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -74,5 +75,5 @@ public class GetData extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
-    
+
 }

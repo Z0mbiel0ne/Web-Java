@@ -35,6 +35,7 @@ public class Kundendaten {
     }
 
     public void setVorname(String vorname) {
+        System.out.println("testBeans.Kundendaten.setVorname()");
         this.vorname = vorname;
     }
 
@@ -67,6 +68,7 @@ public class Kundendaten {
     }
 
     public void setText(String text) {
+        System.out.println("testBeans.Kundendaten.setText()");
         this.text = text;
     }
 }
