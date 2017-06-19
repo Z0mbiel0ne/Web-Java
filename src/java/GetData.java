@@ -22,7 +22,7 @@ import testBeans.NachrichtenListe;
  */
 @WebServlet("/GetData")
 public class GetData extends HttpServlet {
-
+    static NachrichtenListe liste = new NachrichtenListe();
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -40,7 +40,6 @@ public class GetData extends HttpServlet {
         data.setDatum(request.getParameter("Datum"));
         data.setGrund(request.getParameter("Grund"));
         data.setText(request.getParameter("Text"));
-        NachrichtenListe liste = new NachrichtenListe();
         liste.add(data);
         request.setAttribute("KundenListe", liste);
         RequestDispatcher rd = request.getRequestDispatcher("Details.jsp");

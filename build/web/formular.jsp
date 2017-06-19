@@ -3,11 +3,13 @@
     Created on : 22.05.2017, 12:23:56
     Author     : Marcel
 --%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 ﻿<html>
 
     <head>
+        <jsp:useBean id="Kundendaten" class="testBeans.Kundendaten"/>
         <meta charset="utf-8"/>
         <link rel="stylesheet" type="text/css" href="css/style.css">
         <title>
@@ -19,9 +21,9 @@
     <body>
 
         <nav>
-            <a href="index.html"><img id="logo" title="Logo des Vereins" alt="Logo" src="img/logo.png"></a>
+            <a href="index.jsp"><img id="logo" title="Logo des Vereins" alt="Logo" src="img/logo.png"></a>
             <div id = "navigation">
-                <a class="knopf groß" href="index.html">Vereinsnachrichten-Index</a>
+                <a class="knopf groß" href="index.jsp">Vereinsnachrichten-Index</a>
                 <a class="knopf groß" href="vorstand.html">Vorstand</a>
                 <a class="knopf groß" href="formular.jsp">Kontakt</a> 
             </div> 

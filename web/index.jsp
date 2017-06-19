@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
   <head>
   <meta charset="utf-8"/>
@@ -6,9 +7,9 @@
   </head>
   <body>
       <nav>
-        <a href="index.html"><img id="logo" title="Logo des Vereins" alt="Logo" src="img/logo.png"></a>
+        <a href="index.jsp"><img id="logo" title="Logo des Vereins" alt="Logo" src="img/logo.png"></a>
         <div id = "navigation">
-          <a class="knopf groß" href="index.html"> Vereinsnachrichten-Index</a>
+          <a class="knopf groß" href="index.jsp"> Vereinsnachrichten-Index</a>
           <a class="knopf groß" href="vorstand.html"> Vorstand</a>
           <a class="knopf groß" href="formular.jsp">Kontakt</a> 
         </div> 
@@ -22,11 +23,9 @@
             <th>Datum</th>
             <th>Text</th>
           </tr>
-          <tr>
-            <td>Interessante Nachricht</td>
-            <td>29.3.17</td>
-            <td><a href="Details.jsp">hier klicken</a></td>
-          </tr>
+          <c:forEach var="item" items="${KundenListe}">
+            ${item} <br />
+          </c:forEach> 
         </tbody>
       </table>
     </div>

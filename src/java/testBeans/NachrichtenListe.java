@@ -12,7 +12,7 @@ import testBeans.Kundendaten;
  *
  * @author Marcel
  */
-public static class NachrichtenListe {
+public class NachrichtenListe {
 
     ArrayList<Kundendaten> liste = new ArrayList<Kundendaten>();
     public NachrichtenListe() {
