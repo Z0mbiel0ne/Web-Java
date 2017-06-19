@@ -1,22 +1,16 @@
-<%-- 
-    Document   : Test
-    Created on : 22.05.2017, 12:23:56
-    Author     : Marcel
---%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 ﻿<html>
 
     <head>
-        <jsp:useBean id="Kundendaten" class="testBeans.Kundendaten"/>
-        <meta charset="utf-8"/>
-        <link rel="stylesheet" type="text/css" href="css/style.css">
-        <title>
-            Test Verein
-        </title>
+	<meta charset="utf-8"/>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+		<title>
+		Test Verein
+		</title>
 
-    </head>
+	</head>
 
     <body>
 

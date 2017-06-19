@@ -1,21 +1,15 @@
-<%-- 
-    Document   : Details
-    Created on : 22.05.2017, 16:21:42
-    Author     : Marcel
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 
     <head>
-        <meta charset="utf-8"/>
-        <link rel="stylesheet" type="text/css" href="css/style.css">
-        <title>
-            Test Verein
-        </title>
+	<meta charset="utf-8"/>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+		<title>
+		Test Verein
+		</title>
 
-    </head>
+	</head>
 
     <body>
         <nav>
@@ -34,7 +28,7 @@
             <jsp:setProperty name="Kundendaten" property="nachname"/>
             <jsp:setProperty name="Kundendaten" property="datum"/>
             <jsp:setProperty name="Kundendaten" property="grund"/>
-            <jsp:setProperty name="Kundendaten" property="text" value="test"/>
+            <jsp:setProperty name="Kundendaten" property="text"/>
             
             <ul >
                 

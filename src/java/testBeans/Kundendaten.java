@@ -16,8 +16,17 @@ public class Kundendaten {
       String datum;
       String grund;
       String text;
+      int ID;
     // Add business logic below. (Right-click in editor and choose
     // "Insert Code > Add Business Method")
+
+    public int getID() {
+        return ID;
+    }
+
+    public void setID(int ID) {
+        this.ID = ID;
+    }
 
     public Kundendaten(String vorname, String nachname, String datum, String grund, String text) {
         this.vorname = vorname;

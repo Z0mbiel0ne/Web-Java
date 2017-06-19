@@ -24,6 +24,7 @@ import testBeans.NachrichtenListe;
 public class GetData extends HttpServlet {
 
     static NachrichtenListe liste = new NachrichtenListe();
+    int counter = 1;
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -35,6 +36,7 @@ public class GetData extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+       response.setContentType("text/html;charset=UTF-8");
         switch (request.getParameter("action")) {
             case "all":
                 all(request, response);
@@ -44,14 +46,14 @@ public class GetData extends HttpServlet {
                 form(request, response);
                 break;
                 
-            case "details":
+            case "lol":
                 details(request, response);
                 break;
         }
     }
 
     protected void all(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.setAttribute("NachrichtenListe", liste);
+        request.setAttribute("NachrichtenListe", liste.getListe());
         RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
         rd.include(request, response);
     }
@@ -96,21 +98,31 @@ public class GetData extends HttpServlet {
     }// </editor-fold>
 
     private void form(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        Kundendaten data = new Kundendaten();
-        data.setVorname(request.getParameter("Vorname"));
-        data.setNachname(request.getParameter("Nachname"));
-        data.setDatum(request.getParameter("Datum"));
-        data.setGrund(request.getParameter("Grund"));
-        data.setText(request.getParameter("Text"));
-        liste.add(data);
         RequestDispatcher rd = request.getRequestDispatcher("Details.jsp");
         rd.include(request, response);
+        Kundendaten data = new Kundendaten();
+        data.setVorname(request.getParameter("vorname"));
+        data.setNachname(request.getParameter("nachname"));
+        data.setDatum(request.getParameter("datum"));
+        data.setGrund(request.getParameter("grund"));
+        data.setText(request.getParameter("text"));
+        data.setID(counter);
+        liste.add(data);
+        counter++;
     }
 
     private void details(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String id = request.getParameter("id");
+        int id = Integer.parseInt(request.getParameter("id"));
+        for (Kundendaten k : liste.getListe()) {
+            if (id == k.getID())
+            {
+                request.setAttribute("Kundendaten", k);
+                break;
+            }
+        }
         RequestDispatcher rd = request.getRequestDispatcher("Details.jsp");
         rd.include(request, response);
+        
     }
 
 }
