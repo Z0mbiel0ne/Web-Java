@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import testBeans.Kundendaten;
+import testBeans.NachrichtenListe;
 
 /**
  *
@@ -33,6 +34,15 @@ public class GetData extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html");
+        Kundendaten data = new Kundendaten();
+        data.setVorname(request.getParameter("Vorname"));
+        data.setNachname(request.getParameter("Nachname"));
+        data.setDatum(request.getParameter("Datum"));
+        data.setGrund(request.getParameter("Grund"));
+        data.setText(request.getParameter("Text"));
+        NachrichtenListe liste = new NachrichtenListe();
+        liste.add(data);
+        request.setAttribute("KundenListe", liste);
         RequestDispatcher rd = request.getRequestDispatcher("Details.jsp");
         rd.include(request, response);
     }

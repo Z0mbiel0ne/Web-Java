@@ -8,9 +8,9 @@
       <nav>
         <a href="index.html"><img id="logo" title="Logo des Vereins" alt="Logo" src="img/logo.png"></a>
         <div id = "navigation">
-          <a class="knopf groÃŸ" href="index.html"> Vereinsnachrichten-Index</a>
-          <a class="knopf groÃŸ" href="vorstand.html"> Vorstand</a>
-          <a class="knopf groÃŸ" href="formular.jsp">Kontakt</a> 
+          <a class="knopf groß" href="index.html"> Vereinsnachrichten-Index</a>
+          <a class="knopf groß" href="vorstand.html"> Vorstand</a>
+          <a class="knopf groß" href="formular.jsp">Kontakt</a> 
         </div> 
       </nav>
     <br>
@@ -18,7 +18,7 @@
       <table class="zentriert" style="width: 319px; height: 70px; text-align: center">
         <tbody>
           <tr>
-            <th>Ãœberschrift</th>
+            <th>Überschrift</th>
             <th>Datum</th>
             <th>Text</th>
           </tr>
