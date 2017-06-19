@@ -14,6 +14,14 @@ import testBeans.Kundendaten;
  */
 public class NachrichtenListe {
 
+    public ArrayList<Kundendaten> getListe() {
+        return liste;
+    }
+
+    public void setListe(ArrayList<Kundendaten> liste) {
+        this.liste = liste;
+    }
+
     ArrayList<Kundendaten> liste = new ArrayList<Kundendaten>();
     public NachrichtenListe() {
         

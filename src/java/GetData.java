@@ -22,7 +22,9 @@ import testBeans.NachrichtenListe;
  */
 @WebServlet("/GetData")
 public class GetData extends HttpServlet {
+
     static NachrichtenListe liste = new NachrichtenListe();
+
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -33,16 +35,24 @@ public class GetData extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.setContentType("text/html");
-        Kundendaten data = new Kundendaten();
-        data.setVorname(request.getParameter("Vorname"));
-        data.setNachname(request.getParameter("Nachname"));
-        data.setDatum(request.getParameter("Datum"));
-        data.setGrund(request.getParameter("Grund"));
-        data.setText(request.getParameter("Text"));
-        liste.add(data);
-        request.setAttribute("KundenListe", liste);
-        RequestDispatcher rd = request.getRequestDispatcher("Details.jsp");
+        switch (request.getParameter("action")) {
+            case "all":
+                all(request, response);
+                break;
+                
+            case "form":
+                form(request, response);
+                break;
+                
+            case "details":
+                details(request, response);
+                break;
+        }
+    }
+
+    protected void all(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setAttribute("NachrichtenListe", liste);
+        RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
         rd.include(request, response);
     }
 
@@ -84,5 +94,23 @@ public class GetData extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
+
+    private void form(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        Kundendaten data = new Kundendaten();
+        data.setVorname(request.getParameter("Vorname"));
+        data.setNachname(request.getParameter("Nachname"));
+        data.setDatum(request.getParameter("Datum"));
+        data.setGrund(request.getParameter("Grund"));
+        data.setText(request.getParameter("Text"));
+        liste.add(data);
+        RequestDispatcher rd = request.getRequestDispatcher("Details.jsp");
+        rd.include(request, response);
+    }
+
+    private void details(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String id = request.getParameter("id");
+        RequestDispatcher rd = request.getRequestDispatcher("Details.jsp");
+        rd.include(request, response);
+    }
 
 }

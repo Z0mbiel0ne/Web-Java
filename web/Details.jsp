@@ -19,9 +19,9 @@
 
     <body>
         <nav>
-            <a href="index.jsp"><img id="logo" title="Logo des Vereins" alt="Logo" src="img/logo.png"></a>
+            <a href="GetData?action=all"><img id="logo" title="Logo des Vereins" alt="Logo" src="img/logo.png"></a>
             <div id = "navigation">
-                <a class="knopf groß" href="index.jsp"> Vereinsnachrichten-Index</a>
+                <a class="knopf groß" href="GetData?action=all"> Vereinsnachrichten-Index</a>
                 <a class="knopf groß" href="vorstand.html"> Vorstand</a>
                 <a class="knopf groß" href="formular.jsp">Kontakt</a>
             </div> 
