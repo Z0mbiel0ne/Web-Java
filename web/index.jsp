@@ -20,8 +20,8 @@
       </nav>
     <br>
     <div>
-      <table class="zentriert" style="width: 319px; height: 70px; text-align: center">
         <c:if test="${!NachrichtenListe.isEmpty()}" >
+      <table class="zentriert" style="width: 319px; height: 70px; text-align: center">  
         <tbody>
           <tr>
             <th>Überschrift</th>
@@ -32,12 +32,12 @@
                 <tr>
                   <td>${item.getVorname()}</td>
                   <td>${item.getDatum()}</td>
-                  <td><a href="GetData?action=lol&id=${item.getID()}">Klick Mich</a></td>
+                  <td><a href="GetData?action=details&id=${item.getID()}">Klick Mich Hart!</a></td>
                 </tr>
                 </c:forEach>
         </tbody>
-        </c:if>
       </table>
+      </c:if>
     </div>
   </body>
 </html>

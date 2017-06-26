@@ -23,7 +23,7 @@
 
         <div align="center">
             
-            <jsp:useBean id="Kundendaten" class="testBeans.Kundendaten" scope="session" />
+            <jsp:useBean id="Kundendaten" class="Model.Kundendaten" scope="session" />
             <jsp:setProperty name="Kundendaten" property="vorname"/>
             <jsp:setProperty name="Kundendaten" property="nachname"/>
             <jsp:setProperty name="Kundendaten" property="datum"/>

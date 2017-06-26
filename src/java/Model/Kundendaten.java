@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package testBeans;
+package Model;
 
 /**
  *
@@ -77,7 +77,6 @@ public class Kundendaten {
     }
 
     public void setText(String text) {
-        System.out.println("testBeans.Kundendaten.setText()");
         this.text = text;
     }
 }

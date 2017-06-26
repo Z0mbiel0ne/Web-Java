@@ -1,3 +1,5 @@
+package Controller;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -13,8 +15,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import testBeans.Kundendaten;
-import testBeans.NachrichtenListe;
+import Model.Kundendaten;
+import Model.NachrichtenListe;
 
 /**
  *
@@ -46,7 +48,7 @@ public class GetData extends HttpServlet {
                 form(request, response);
                 break;
                 
-            case "lol":
+            case "details":
                 details(request, response);
                 break;
         }
@@ -106,9 +108,8 @@ public class GetData extends HttpServlet {
         data.setDatum(request.getParameter("datum"));
         data.setGrund(request.getParameter("grund"));
         data.setText(request.getParameter("text"));
-        data.setID(counter);
+        data.setID(counter++);
         liste.add(data);
-        counter++;
     }
 
     private void details(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
