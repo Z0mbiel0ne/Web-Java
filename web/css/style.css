@@ -35,6 +35,11 @@
     cursor: pointer;
 } 
 
+.knopf:disabled
+{
+	background-color: gray;
+} 
+
 .groß
 {
 	padding: 15px 32px;
