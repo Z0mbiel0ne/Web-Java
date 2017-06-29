@@ -2,9 +2,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <html>
     <head>
-        <script src="http://code.jquery.com/jquery-latest.js"></script>
-        <script src="js/script.js">
-        </script>
         <meta charset="utf-8"/>
         <link rel="stylesheet" type="text/css" href="css/style.css">
         <link rel="shortcut icon" href="favicon.ico" />
@@ -47,18 +44,18 @@
     <div align="center">
         <div>
         </div>
-        <form action="#" method="post" style="">
             <div>
                 <textarea  placeholder="Text hie eingeben ... " name="chattext" rows="3" cols="39" id="chattext"></textarea>
-                <script>$("textarea#chattext").on("keyup", function() { check(); })</script>
             </div>
             <div>
                 <input  placeholder="Ihr Name" type="text" name="chatname" id="chatname">
                 <a id="counter">150</a>
-                <button id="send" class="knopf klein" type="submit" disabled >Absenden</button>
+                <button id="send" class="knopf klein" onclick="send();" disabled >Absenden</button>
             </div>
-        </form>
     </div>
 </div>
 </body>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script src="js/script.js">
+</script>
 </html>

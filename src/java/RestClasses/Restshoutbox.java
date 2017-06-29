@@ -47,6 +47,6 @@ public class Restshoutbox {
     @Produces(MediaType.TEXT_PLAIN)
     public String addInfo(@QueryParam("Name") String name, @QueryParam("Datum") String datum, @QueryParam("Nachricht") String msg) {
         list.add(new ShoutboxNachricht(name,datum,msg));
-        return "test";
+        return "";
     }
 }
