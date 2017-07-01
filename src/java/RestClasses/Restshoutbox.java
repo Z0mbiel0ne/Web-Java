@@ -6,9 +6,10 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import Model.ShoutboxNachricht;
+import java.util.Date;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.PUT;
-import javax.ws.rs.QueryParam;
+import javax.ws.rs.core.Response;
 
 @Path("/shoutbox")
 public class Restshoutbox {
@@ -20,33 +21,33 @@ public class Restshoutbox {
         list.add(new ShoutboxNachricht("Hans Peter", "23.09.1810", "Dies ist ein Testeintrag"));
         list.add(new ShoutboxNachricht("Peter Lustig", "16.11.1960", "Dies auch"));
     }
+    
+    
+    @GET
+    @Path("/p")
+    @Produces(MediaType.TEXT_PLAIN)
+    public String getServerTime() {
+        System.out.println("RESTful Service 'MessageService' is running ==> ping");
+        return "Test Zeit: " + new Date().toString();
+    }
 
     @GET
-    @Produces("application/json")
-    public String getShoutboxInfo() {
-        String back;
-        back = "[";
-        int i = 0;
-        for (ShoutboxNachricht s : list) {
-
-            if(i>0)
-            {
-                back += ", ";
-            }
-            
-            back += "{ \"ID\" : " + i++ + " \"Name\" : " + s.getName() + " \"Datum\" : " + s.getDatum() + " \"Nachricht\" : " + s.getNachricht() + "}";
-            
-            
-        }
-        back += "]";
-        return back;
+    @Produces({MediaType.APPLICATION_JSON})
+    public ArrayList<ShoutboxNachricht> getShoutboxInfo() {
+        return list;
     }
     
     @PUT
-    @Consumes(MediaType.TEXT_PLAIN)
-    @Produces(MediaType.TEXT_PLAIN)
-    public String addInfo(@QueryParam("Name") String name, @QueryParam("Datum") String datum, @QueryParam("Nachricht") String msg) {
-        list.add(new ShoutboxNachricht(name,datum,msg));
-        return "";
+    @Consumes("application/json")
+    public Response addInfo(ShoutboxNachricht s) {
+        if(s.getName() != null && s.getDatum() != null && s.getNachricht() != null)
+        {
+            list.add(s);
+            return Response.status(Response.Status.OK).build();
+        }
+        else
+        {
+            return Response.status(Response.Status.NOT_FOUND).build();
+        }
     }
 }

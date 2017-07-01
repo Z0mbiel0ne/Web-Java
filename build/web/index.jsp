@@ -41,9 +41,14 @@
             </c:if>
         </div>
     </div>
+    <br>
     <div align="center">
-        <div>
+        <div id="chatarea" align="left">
+            <ul id="chatlist">
+                
+            </ul>
         </div>
+        <br>
             <div>
                 <textarea  placeholder="Text hie eingeben ... " name="chattext" rows="3" cols="39" id="chattext"></textarea>
             </div>

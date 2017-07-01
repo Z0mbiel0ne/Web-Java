@@ -73,5 +73,22 @@
 #fragen input
 {
 	width: 100%;
-    clear: both;
+        clear: both;
+}
+
+#chatarea
+{
+    width: 31%;
+    border: thin solid;
+}
+
+ul
+{
+    padding-left: 0px;
+}
+
+li
+{
+    padding-left: 0px;
+    list-style: none;
 }
