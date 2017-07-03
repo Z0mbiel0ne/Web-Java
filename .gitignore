@@ -1,2 +1,9 @@
-dist/
-build/
+dist/*
+build/*
+build/web/WEB-INF/classes/Controller/GetData.class
+build/web/WEB-INF/classes/Controller/GetData.class
+build/web/WEB-INF/classes/RestClasses/RestApplication.class
+dist/Web-Java.war
+build/web/WEB-INF/classes/RestClasses/RestApplication.class
+build/web/WEB-INF/classes/Controller/GetData.class
+build/web/js/script.js

@@ -3,10 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+ var count = 0;
  
     $(document).ready(function () {
         receive();
-        setInterval("receive()", 1000);
+        setInterval("receive()", 2000);
      });
  
     function send() {
@@ -32,6 +33,7 @@
         
         $("textarea#chattext").val("");
         $("#chatname").prop('disabled', true);
+        check();
     }
     
     function receive() {   
@@ -47,21 +49,41 @@
     
     function createText(data)
     {
-        var list;
         var area = $('#chatlist');
         area.empty();
-        for(var i = 0; i < data.length; i++) {
+        for(var i = 0; i < data.length; i++) 
+        {
             var obj = data[i];
             if(obj.name == $("#chatname").val())
             {
-                var content = '<li id="right">'+ obj.nachricht + " " + obj.name + ": " + obj.datum + '</li>';
+                if(i == data.length-1 && i > count)
+                {
+                    var content = '<li class="last" id="right" style="display: none">'+ obj.nachricht + " " + obj.name + ": " + obj.datum + '</li>';
+                    area.append(content);
+                    $(".last").fadeIn(1000);
+                    count = i;
+                }
+                else
+                {
+                    var content = '<li id="right">'+ obj.nachricht + " " + obj.name + ": " + obj.datum + '</li>';
+                    area.append(content);
+                }
             }
             else
             {
-                var content = '<li id="left">'+ obj.datum + " " + obj.name + ": " + obj.nachricht + '</li>';
+                if(i == data.length-1 && i > count)
+                {
+                    var content = '<li class="last" id="left" style="display: none">'+ obj.datum + " " + obj.name + ": " + obj.nachricht + '</li>';
+                    area.append(content);
+                      $(".last").fadeIn(1000);
+                      count = i;
+                }
+                else
+                {
+                    var content = '<li id="left">'+ obj.datum + " " + obj.name + ": " + obj.nachricht + '</li>';
+                    area.append(content);
+                }
             }
-            
-            area.append(content);
         }
 
     }
@@ -88,12 +110,16 @@
         msg = msg - $("textarea#chattext").val().length;
         if (msg <= 0)
         {
+            $("textarea#chattext").css("border","3px solid");
+            $("textarea#chattext").css("border-color","red");
             $("#counter").html(msg);
             $("#counter").css("color","red")
             document.getElementById("send").disabled = true;
         }
         else
         {
+            $("textarea#chattext").css("border-width","1px");
+            $("textarea#chattext").css("border-color","rgb(169, 169, 169)");
             $("#counter").html(msg);
             $("#counter").css("color","green")
         }
