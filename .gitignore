@@ -45,3 +45,9 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+*.class
+*.res
+*.xml
+build/web/WEB-INF/classes/.netbeans_automatic_build
+*.war
+build/web/WEB-INF/classes/.netbeans_update_resources
