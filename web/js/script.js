@@ -32,7 +32,6 @@
         
         $("textarea#chattext").val("");
         $("#chatname").prop('disabled', true);
-        //receive();
     }
     
     function receive() {   
