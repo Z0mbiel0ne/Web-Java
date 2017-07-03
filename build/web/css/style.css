@@ -92,3 +92,11 @@ li
     padding-left: 0px;
     list-style: none;
 }
+
+#right {
+    text-align: right;
+}
+
+ul li#left {
+    text-align: left;
+}

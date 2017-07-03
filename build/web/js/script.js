@@ -22,8 +22,6 @@
        myJson["datum"] = date;
        myJson["nachricht"] = $("textarea#chattext").val();
        
-       var json = JSON.stringify(myJson)
-       
         $.ajax({
         type: "PUT",
         url: "resources/shoutbox",
@@ -31,10 +29,9 @@
         contentType: "application/json; charset=utf-8",
         dataType: "json",
         success: "callback"});
-    
-        $("textarea#chattext").value = JSON.stringify(myJson);
         
         $("textarea#chattext").val("");
+        $("#chatname").prop('disabled', true);
         //receive();
     }
     
@@ -56,7 +53,15 @@
         area.empty();
         for(var i = 0; i < data.length; i++) {
             var obj = data[i];
-            var content = '<li>'+ obj.datum + " " + obj.name + " sagt: " + obj.nachricht + '</li>';
+            if(obj.name == $("#chatname").val())
+            {
+                var content = '<li id="right">'+ obj.nachricht + " " + obj.name + ": " + obj.datum + '</li>';
+            }
+            else
+            {
+                var content = '<li id="left">'+ obj.datum + " " + obj.name + ": " + obj.nachricht + '</li>';
+            }
+            
             area.append(content);
         }
 

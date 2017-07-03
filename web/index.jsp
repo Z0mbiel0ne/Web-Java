@@ -40,27 +40,24 @@
                 </table>
             </c:if>
         </div>
-    </div>
     <br>
     <div align="center">
-        <div id="chatarea" align="left">
+        <div id="chatarea" align="none">
             <ul id="chatlist">
-                
+
             </ul>
         </div>
         <br>
-            <div>
-                <textarea  placeholder="Text hie eingeben ... " name="chattext" rows="3" cols="39" id="chattext"></textarea>
-            </div>
-            <div>
-                <input  placeholder="Ihr Name" type="text" name="chatname" id="chatname">
-                <a id="counter">150</a>
-                <button id="send" class="knopf klein" onclick="send();" disabled >Absenden</button>
-            </div>
+        <div>
+            <textarea  placeholder="Text hie eingeben ... " name="chattext" rows="3" cols="39" id="chattext"></textarea>
+        </div>
+        <div>
+            <input  placeholder="Ihr Name" type="text" name="chatname" id="chatname">
+            <a id="counter">150</a>
+            <button id="send" class="knopf klein" onclick="send();" disabled >Absenden</button>
+        </div>
     </div>
-</div>
 </body>
 <script src="http://code.jquery.com/jquery-latest.js"></script>
-<script src="js/script.js">
-</script>
+<script src="js/script.js"></script>
 </html>
