@@ -58,14 +58,14 @@
             {
                 if(i == data.length-1 && i > count)
                 {
-                    var content = '<li class="last" id="right" style="display: none">'+ obj.nachricht + " " + obj.name + ": " + obj.datum + '</li>';
+                    var content = '<li class="last" id="right" style="display: none">'+ obj.nachricht + " <u>" + obj.name + ": " + obj.datum + '</u></li>';
                     area.append(content);
                     $(".last").fadeIn(1000);
                     count = i;
                 }
                 else
                 {
-                    var content = '<li id="right">'+ obj.nachricht + " " + obj.name + ": " + obj.datum + '</li>';
+                    var content = '<li id="right">'+ obj.nachricht + " <u>" + obj.name + ": " + obj.datum + '</u></li>';
                     area.append(content);
                 }
             }
@@ -73,14 +73,14 @@
             {
                 if(i == data.length-1 && i > count)
                 {
-                    var content = '<li class="last" id="left" style="display: none">'+ obj.datum + " " + obj.name + ": " + obj.nachricht + '</li>';
+                    var content = '<li class="last" id="left" style="display: none"><u>'+ obj.datum + " " + obj.name + "</u>: " + obj.nachricht + '</li>';
                     area.append(content);
                       $(".last").fadeIn(1000);
                       count = i;
                 }
                 else
                 {
-                    var content = '<li id="left">'+ obj.datum + " " + obj.name + ": " + obj.nachricht + '</li>';
+                    var content = '<li id="left"><u>'+ obj.datum + " " + obj.name + "</u>: " + obj.nachricht + '</li>';
                     area.append(content);
                 }
             }
