@@ -1,7 +1,7 @@
 #logo
 {
-	width: 100px;
-	height: 100px;
+	width: 40px;
+        height: 40px;
 	float: left;
 }
 
@@ -99,4 +99,13 @@ li
 
 ul li#left {
     text-align: left;
+}
+
+.navbar-toggle .icon-bar {
+    background-color: black;
+}
+
+.navbar-toggle
+{
+    border-color: black;
 }

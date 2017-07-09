@@ -6,6 +6,15 @@
 	<meta charset="utf-8"/>
         <link rel="shortcut icon" href="favicon.ico" />
 	<link rel="stylesheet" type="text/css" href="css/style.css">
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 		<title>
 		Test Verein
 		</title>
@@ -13,14 +22,16 @@
 	</head>
 
     <body>
-        <nav>
-            <a href="GetData?action=all"><img id="logo" title="Logo des Vereins" alt="Logo" src="img/logo.png"></a>
-            <div id = "navigation">
-                <a class="knopf groß" href="GetData?action=all"> Vereinsnachrichten-Index</a>
-                <a class="knopf groß" href="vorstand.html"> Vorstand</a>
-                <a class="knopf groß" href="formular.jsp">Kontakt</a>
-            </div> 
-        </nav>
+        <nav class="navbar">
+            <div class="container-fluid">
+              <div class="navbar-header">
+                <a class="navbar-brand" href="GetData?action=all"><img id="logo" title="Logo des Vereins" alt="Logo" src="img/logo.png"></a>
+              </div>
+                <button class="btn btn-success navbar-btn" onclick = "location.href='GetData?action=all'">Vereinsnachrichten-Index</button>
+                <button class="btn btn-success navbar-btn" onclick = "location.href='vorstand.html'">Vorstand</button>
+                <button class="btn btn-success navbar-btn" onclick = "location.href='formular.jsp'">Kontakt</button>
+            </div>
+            </nav>
 
         <div align="center">
             

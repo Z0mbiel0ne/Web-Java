@@ -1,12 +1,20 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-﻿<html>
+<html>
 
     <head>
 	<meta charset="utf-8"/>
         <link rel="shortcut icon" href="favicon.ico" />
 	<link rel="stylesheet" type="text/css" href="css/style.css">
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 		<title>
 		Test Verein
 		</title>
@@ -15,32 +23,27 @@
 
     <body>
 
-        <nav>
-            <a href="GetData?action=all"><img id="logo" title="Logo des Vereins" alt="Logo" src="img/logo.png"></a>
-            <div id = "navigation">
-                <a class="knopf groß" href="GetData?action=all">Vereinsnachrichten-Index</a>
-                <a class="knopf groß" href="vorstand.html">Vorstand</a>
-                <a class="knopf groß" href="formular.jsp">Kontakt</a> 
-            </div> 
-        </nav>
+        <nav class="navbar" role="navigation">
+            <div class="container-fluid">
+              <div class="navbar-header">
+                    <a class="navbar-brand" href="GetData?action=all"><img id="logo" title="Logo des Vereins" alt="Logo" src="img/logo.png"></a>
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+              </div>
+                <div class="collapse navbar-collapse" id="myNavbar">  
+                    <button class="btn btn-success navbar-btn" onclick = "location.href='GetData?action=all'">Vereinsnachrichten-Index</button>
+                    <button class="btn btn-success navbar-btn" onclick = "location.href='vorstand.html'">Vorstand</button>
+                    <button class="btn btn-success navbar-btn" onclick = "location.href='formular.jsp'">Kontakt</button>
+                </div>
+            </div>
+            </nav>
 
         <br>
 
         <div>
-            <div style="width: 15%; float: left">
-                <div align="center">
-                    <script type="text/javascript">
-                        google_ad_client = "ca-pub-8289615059669960";
-                        google_ad_slot = "1773028138";
-                        google_ad_width = 300;
-                        google_ad_height = 600;
-                    </script>
-                    <!-- Werbung -->
-                    <script type="text/javascript"
-                            src="//pagead2.googlesyndication.com/pagead/show_ads.js">
-                    </script>
-                </div>
-            </div>
             <div style="width: 70%; float: left" align="center">
                 <form method="GET" action="GetData" style="display: block;">
                     <fieldset id="fragen">
@@ -72,22 +75,7 @@
                     </fieldset>
                 </form>
             </div>
-            <div style="width: 15%; float: left;">
-                <div align="center">
-                    <script type="text/javascript">
-                        google_ad_client = "ca-pub-8289615059669960";
-                        google_ad_slot = "1773028138";
-                        google_ad_width = 300;
-                        google_ad_height = 600;
-                    </script>
-                    <!-- Werbung -->
-                    <script type="text/javascript"
-                            src="//pagead2.googlesyndication.com/pagead/show_ads.js">
-                    </script>
-                </div>
-            </div>
         </div>
-
     </body>
 
 </html>
